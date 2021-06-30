@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".activities.ChatActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@null"
+        android:background="@color/orange_800"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/photo"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/default_photo"
+                android:background="@drawable/shape_circle_theme_outline"
+                />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                tools:text="Suman khan"
+                android:textSize="16sp"
+                android:fontFamily="@font/muli_semibold"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        tools:listitem="@layout/item_right"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/chat_text"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/attachFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_attach_file"
+        android:background="@drawable/shape_selected_single"
+        android:padding="12dp"
+        android:tag="1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@+id/chat_text"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_text"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/chat_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_chat_text_border"
+        app:layout_constraintStart_toEndOf="@id/attachFile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="12dp"
+        android:hint="@string/type_your_message"
+        android:textSize="14sp"
+        android:inputType="textCapSentences"
+        android:fontFamily="@font/muli"
+        android:maxLines="4"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/chat_button"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/chat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_selected_single"
+        android:src="@drawable/ic_send"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@+id/chat_text"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_text"/>
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/attachFile"
+        app:layout_constraintStart_toStartOf="@id/attachFile"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/orange_300"
+        android:background="@drawable/shape_chat_left"/>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="centerCrop"
+        android:rotation="180"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/v1"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        android:backgroundTint="@color/orange_300"
+        android:background="@drawable/shape_bg_bottom_bubble"/>
+
+    <ImageView
+        android:id="@+id/photos"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/photos"
+        android:scaleType="centerCrop"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@id/galleries"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        app:layout_constraintTop_toTopOf="@+id/v1"
+        app:layout_constraintBottom_toBottomOf="@id/v1"/>
+
+    <ImageView
+        android:id="@+id/galleries"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/gallery"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/files"
+        app:layout_constraintStart_toEndOf="@+id/photos"
+        app:layout_constraintTop_toTopOf="@+id/v1"
+        app:layout_constraintBottom_toBottomOf="@id/v1"/>
+
+    <ImageView
+        android:id="@+id/files"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/files"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="@id/v1"
+        app:layout_constraintStart_toEndOf="@+id/galleries"
+        app:layout_constraintTop_toTopOf="@+id/v1"
+        app:layout_constraintBottom_toBottomOf="@id/v1"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/containerGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="v1,v2,photos,galleries,files"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

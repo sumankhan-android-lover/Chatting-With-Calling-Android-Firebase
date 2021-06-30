@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164220268938",
+    "project_id": "chatting-with-calling",
+    "storage_bucket": "chatting-with-calling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164220268938:android:b62087ba4b28e7d2265873",
+        "android_client_info": {
+          "package_name": "com.uaguria.chatingwithcalling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164220268938-c46mvu0cn062ni3a1f3iafln57d2e5cj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLClEcZOZYoAQO4JKGfqiuYTD0Pac2hX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164220268938-c46mvu0cn062ni3a1f3iafln57d2e5cj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
